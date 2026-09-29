@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -24,14 +25,12 @@ class _LoginPageState extends State<LoginPage> {
     }
 
     // Credentials requirement: admin123 & 12345678
-    if (username == "admin123" && password == "12345678") {
+    if (username == "124240198" && password == "SistemInformasi") {
       FocusScope.of(context).unfocus();
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => HomePage(username: username),
-        ),
+        MaterialPageRoute(builder: (context) => HomePage(username: username)),
       );
     } else {
       _showErrorSnackBar("Login gagal! Username atau Password salah.");
@@ -61,9 +60,7 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: Colors.red.shade600,
         behavior: SnackBarBehavior.floating,
         margin: const EdgeInsets.all(16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         duration: const Duration(seconds: 3),
       ),
     );
@@ -89,17 +86,16 @@ class _LoginPageState extends State<LoginPage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              primaryDarkBlue,
-              accentDarkBlue,
-              primaryDarkBlue,
-            ],
+            colors: [primaryDarkBlue, accentDarkBlue, primaryDarkBlue],
           ),
         ),
         child: SafeArea(
           child: Center(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24.0,
+                vertical: 16.0,
+              ),
               child: Card(
                 elevation: 10,
                 shadowColor: Colors.black45,
@@ -108,7 +104,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 color: Colors.white,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 28.0, vertical: 36.0),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 28.0,
+                    vertical: 36.0,
+                  ),
                   child: Form(
                     key: _formKey,
                     child: Column(
@@ -142,16 +141,25 @@ class _LoginPageState extends State<LoginPage> {
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             labelText: "Username",
-                            hintText: "admin123",
-                            prefixIcon: const Icon(Icons.person_outline, color: accentDarkBlue),
+                            hintText: "124240198",
+                            prefixIcon: const Icon(
+                              Icons.person_outline,
+                              color: accentDarkBlue,
+                            ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
-                              borderSide: const BorderSide(color: accentDarkBlue, width: 2),
+                              borderSide: const BorderSide(
+                                color: accentDarkBlue,
+                                width: 2,
+                              ),
                             ),
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 16,
+                              vertical: 16,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 18),
@@ -164,11 +172,16 @@ class _LoginPageState extends State<LoginPage> {
                           onFieldSubmitted: (_) => _handleLogin(),
                           decoration: InputDecoration(
                             labelText: "Password",
-                            hintText: "12345678",
-                            prefixIcon: const Icon(Icons.lock_outline, color: accentDarkBlue),
+                            hintText: "SistemInformasi",
+                            prefixIcon: const Icon(
+                              Icons.lock_outline,
+                              color: accentDarkBlue,
+                            ),
                             suffixIcon: IconButton(
                               icon: Icon(
-                                _isPasswordVisible ? Icons.visibility_off : Icons.visibility,
+                                _isPasswordVisible
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
                                 color: Colors.grey.shade600,
                               ),
                               onPressed: () {
@@ -182,9 +195,15 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
-                              borderSide: const BorderSide(color: accentDarkBlue, width: 2),
+                              borderSide: const BorderSide(
+                                color: accentDarkBlue,
+                                width: 2,
+                              ),
                             ),
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 16,
+                              vertical: 16,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 24),
@@ -218,7 +237,10 @@ class _LoginPageState extends State<LoginPage> {
 
                         // Hint Card Info
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 12,
+                          ),
                           decoration: BoxDecoration(
                             color: const Color(0xFFEFF6FF),
                             borderRadius: BorderRadius.circular(12),
@@ -226,11 +248,15 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           child: Row(
                             children: [
-                              const Icon(Icons.info_outline, size: 20, color: accentDarkBlue),
+                              const Icon(
+                                Icons.info_outline,
+                                size: 20,
+                                color: accentDarkBlue,
+                              ),
                               const SizedBox(width: 10),
                               Expanded(
                                 child: Text(
-                                  "Username: admin123\nPassword: 12345678",
+                                  "Username: 124240198\nPassword: SistemInformasi",
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: Colors.blue.shade900,
